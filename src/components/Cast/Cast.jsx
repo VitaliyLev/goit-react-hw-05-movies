@@ -26,6 +26,7 @@ export default function Cast() {
         cast.map(({ id, profile_path, original_name, character }) => (
           <li key={id}>
             {profile_path ? (
+              // eslint-disable-next-line jsx-a11y/img-redundant-alt
               <img
                 src={`https://image.tmdb.org/t/p/w500${profile_path}`}
                 alt="No image"
@@ -34,8 +35,7 @@ export default function Cast() {
               />
             ) : (
               // eslint-disable-next-line jsx-a11y/img-redundant-alt
-              // eslint-disable-next-line jsx-a11y/img-redundant-alt
-              // eslint-disable-next-line jsx-a11y/img-redundant-alt
+
               //     src="http://artismedia.by/blog/wp-content/uploads/2018/05/in-blog2-1.png"
               //     alt="No image"
               //     height={300}
