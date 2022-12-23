@@ -2,15 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-// import { Link, useLocation } from 'react-router-dom';
 import { getCreditsById } from 'utils/movieApi';
-
-// const ProductDetails = () => {
-//   const location = useLocation();
-//   console.log(location.state); // { from: "/dashboard?name=hoodie" }
-
-//   return <Link to={location.state.from}>Back to products</Link>;
-// };
 
 export default function Cast() {
   const { movieId } = useParams();
@@ -34,8 +26,6 @@ export default function Cast() {
                 width={200}
               />
             ) : (
-              // eslint-disable-next-line jsx-a11y/img-redundant-alt
-
               //     src="http://artismedia.by/blog/wp-content/uploads/2018/05/in-blog2-1.png"
               //     alt="No image"
               //     height={300}
