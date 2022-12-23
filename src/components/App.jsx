@@ -11,6 +11,7 @@ export const App = () => {
     <>
       <Header />
       <Routes>
+        <Route index element={<Home />} />
         <Route path="home" element={<Home />} />
         <Route path="movies" element={<Movies />} />
 
@@ -18,6 +19,8 @@ export const App = () => {
           <Route path="cast" element={<Cast />} />
           <Route path="reviews" element={<Reviews />} />
         </Route>
+
+        <Route path="*" element={<h1>Нічого не знайдено</h1>} />
       </Routes>
     </>
   );
