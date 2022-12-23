@@ -35,6 +35,7 @@ export default function Cast() {
             ) : (
               // eslint-disable-next-line jsx-a11y/img-redundant-alt
               // eslint-disable-next-line jsx-a11y/img-redundant-alt
+              // eslint-disable-next-line jsx-a11y/img-redundant-alt
               //     src="http://artismedia.by/blog/wp-content/uploads/2018/05/in-blog2-1.png"
               //     alt="No image"
               //     height={300}

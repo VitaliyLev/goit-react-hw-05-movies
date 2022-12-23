@@ -5,6 +5,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import { Link, Outlet } from 'react-router-dom';
 
+import { Suspense } from 'react';
+
 const navItems = ['Home', 'Movies'];
 
 export default function Header() {
@@ -23,7 +25,10 @@ export default function Header() {
           </Toolbar>
         </AppBar>
       </Box>
-      <Outlet />
+
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
     </>
   );
 }

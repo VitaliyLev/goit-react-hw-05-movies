@@ -2,13 +2,18 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { Link, Outlet, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { Suspense } from 'react';
 import { getMovieById } from 'utils/movieApi';
 
-import { Box } from '@mui/material';
+import { Box, Button } from '@mui/material';
 
 export default function MovieDetails() {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState([]);
+
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/home';
 
   useEffect(() => {
     getMovieById(movieId).then(data => setMovieDetails(data));
@@ -17,6 +22,9 @@ export default function MovieDetails() {
   const { poster_path, title, vote_average, overview } = movieDetails;
   return (
     <>
+      <Link to={backLinkHref}>
+        <Button>Previous page</Button>
+      </Link>
       <Box sx={{ display: 'flex' }}>
         <img
           src={`https://image.tmdb.org/t/p/w500${poster_path}`}
@@ -47,7 +55,9 @@ export default function MovieDetails() {
           <Link to={'reviews'}>Reviews</Link>
         </li>
       </ul>
-      <Outlet />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
     </>
   );
 }
