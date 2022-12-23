@@ -3,6 +3,7 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 
 const navItems = ['Home', 'Movies'];
 
@@ -13,9 +14,9 @@ export default function Header() {
         <Toolbar>
           <Box sx={{ display: { sm: 'block' } }}>
             {navItems.map(item => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
-              </Button>
+              <Link to={item.toLowerCase()} key={item}>
+                <Button sx={{ color: '#fff' }}>{item}</Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>

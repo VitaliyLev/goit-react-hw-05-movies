@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 // import styled from '@emotion/styled';
 
 import { getQueryMovie } from 'utils/movieApi';
@@ -21,7 +22,6 @@ export default function Movies() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(e.target.query.value);
     getQueryMovie(e.target.query.value).then(data =>
       setmovieSearch(data.results)
     );
@@ -42,9 +42,11 @@ export default function Movies() {
       <div>
         <ul>
           {movieSearch &&
-            movieSearch.map(({ title, id }) => {
-              return <li key={id}>{title}</li>;
-            })}
+            movieSearch.map(({ title, id }) => (
+              <li key={id}>
+                <Link to={`/movies/${id}`}>{title}</Link>
+              </li>
+            ))}
         </ul>
       </div>
     </>

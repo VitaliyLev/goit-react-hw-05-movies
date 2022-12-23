@@ -2,6 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { getTrendMovie } from 'utils/movieApi';
 
@@ -19,7 +20,11 @@ export default function Home() {
         <ul>
           {trendMovie &&
             trendMovie.map(({ title, id }) => {
-              return <li key={id}>{title}</li>;
+              return (
+                <li key={id}>
+                  <Link to={`/movies/${id}`}>{title}</Link>
+                </li>
+              );
             })}
         </ul>
       </div>
