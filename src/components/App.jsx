@@ -11,8 +11,8 @@ export const App = () => {
     <>
       <Header />
       <Routes>
-        <Route index element={<Home />} />
         <Route path="home" element={<Home />} />
+        <Route index element={<Home />} />
         <Route path="movies" element={<Movies />} />
 
         <Route path="movies/:movieId" element={<MovieDetails />}>
@@ -20,7 +20,7 @@ export const App = () => {
           <Route path="reviews" element={<Reviews />} />
         </Route>
 
-        <Route path="*" element={<h1>Нічого не знайдено</h1>} />
+        <Route path="*" element={<Home />} />
       </Routes>
     </>
   );
