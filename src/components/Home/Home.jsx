@@ -1,15 +1,11 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-// import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { getTrendMovie } from 'utils/movieApi';
 import { MovieCard } from 'components/MovieCard/MovieCard';
 
 import Container from '@mui/material/Container';
-// import Box from '@mui/system/Box';
-// import Grid from '@mui/system/Unstable_Grid';
-// import { CardItem } from './Home.styled';
 
 export default function Home() {
   const [trendMovie, setTrendMovie] = useState();
@@ -23,6 +19,7 @@ export default function Home() {
     <>
       <Container fixed>
         <h1>Trending today</h1>
+
         <MovieCard movieList={trendMovie} state={location} />
         {/* <Box sx={{ flexGrow: 1 }}>
           <Grid

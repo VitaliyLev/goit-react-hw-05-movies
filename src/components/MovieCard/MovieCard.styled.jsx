@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const CardItem = styled.li`
+  margin-top: 20px;
   h3 {
     color: #5338ec;
     display: block;
@@ -16,6 +17,11 @@ export const CardItem = styled.li`
     border-radius: 20px;
     height: 400px;
     margin-bottom: 7px;
+
+    &:hover {
+      scale: 1.05;
+      outline: solid 2px blue;
+    }
 
     @media (max-width: 599px) {
       display: block;
