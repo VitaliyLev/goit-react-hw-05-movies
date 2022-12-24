@@ -26,13 +26,6 @@ export default function Cast() {
                 width={200}
               />
             ) : (
-              //     src="http://artismedia.by/blog/wp-content/uploads/2018/05/in-blog2-1.png"
-              //     alt="No image"
-              //     height={300}
-              //     width={200}
-              //   />
-              // eslint-disable-next-line
-
               <p>Ойй, Скоріш за все, кортинка не загрузилась</p>
             )}
             <div>

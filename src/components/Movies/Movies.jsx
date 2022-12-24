@@ -2,21 +2,8 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
-// import styled from '@emotion/styled';
 
 import { getQueryMovie } from 'utils/movieApi';
-
-// import TextField from '@mui/material/TextField';
-// import Button from '@mui/material/Button';
-
-// const Input = styled(TextField)`
-//   width: 300px;
-//   height: 50px;
-// `;
-// const Btn = styled(Button)`
-//   width: 100px;
-//   height: 50px;
-// `;
 
 export default function Movies() {
   const [movieSearch, setmovieSearch] = useState([]);
@@ -50,10 +37,6 @@ export default function Movies() {
     <>
       <div>
         <form onSubmit={handleSubmit}>
-          {/* <Input id="outlined-basic" label="Search" variant="outlined" />
-        <Btn variant="outlined" sx={{ height: '50' }}>
-          Primary
-        </Btn> */}
           <input
             type="text"
             placeholder="Search movies"
