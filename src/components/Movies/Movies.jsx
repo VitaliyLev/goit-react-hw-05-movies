@@ -1,9 +1,12 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
+import { MovieCard } from 'components/MovieCard/MovieCard';
 
 import { getQueryMovie } from 'utils/movieApi';
+
+import Container from '@mui/material/Container';
 
 export default function Movies() {
   const [movieSearch, setmovieSearch] = useState([]);
@@ -34,7 +37,7 @@ export default function Movies() {
   }, [queryUrl]);
 
   return (
-    <>
+    <Container fixed>
       <div>
         <form onSubmit={handleSubmit}>
           <input
@@ -47,18 +50,8 @@ export default function Movies() {
           <button>Search</button>
         </form>
       </div>
-      <div>
-        <ul>
-          {movieSearch &&
-            movieSearch.map(({ title, id }) => (
-              <li key={id}>
-                <Link to={`/movies/${id}`} state={{ from: location }}>
-                  {title}
-                </Link>
-              </li>
-            ))}
-        </ul>
-      </div>
-    </>
+
+      <MovieCard movieList={movieSearch} state={location} />
+    </Container>
   );
 }
