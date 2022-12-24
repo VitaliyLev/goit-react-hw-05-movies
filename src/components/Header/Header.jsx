@@ -1,11 +1,10 @@
 import * as React from 'react';
+import { Link, Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
-import { Link, Outlet } from 'react-router-dom';
-
-import { Suspense } from 'react';
 
 const navItems = ['Home', 'Movies'];
 

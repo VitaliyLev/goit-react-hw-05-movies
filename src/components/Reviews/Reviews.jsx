@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+
 import { getReviewsById } from 'utils/movieApi';
 
 export default function Reviews() {

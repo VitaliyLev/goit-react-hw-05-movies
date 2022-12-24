@@ -1,6 +1,7 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
 // import styled from '@emotion/styled';
 
 import { getQueryMovie } from 'utils/movieApi';
@@ -19,15 +20,31 @@ import { getQueryMovie } from 'utils/movieApi';
 
 export default function Movies() {
   const [movieSearch, setmovieSearch] = useState([]);
-
+  const [querySearch, setQuerySearch] = useState('');
   const location = useLocation();
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const queryUrl = searchParams.get('query');
 
   const handleSubmit = e => {
     e.preventDefault();
-    getQueryMovie(e.target.query.value).then(data =>
-      setmovieSearch(data.results)
-    );
+
+    if (!querySearch) {
+      setSearchParams('');
+      return;
+    }
+
+    setSearchParams({ query: querySearch });
   };
+
+  useEffect(() => {
+    if (!queryUrl) {
+      return;
+    }
+
+    setQuerySearch(queryUrl);
+    getQueryMovie(queryUrl).then(data => setmovieSearch(data.results));
+  }, [queryUrl]);
 
   return (
     <>
@@ -37,7 +54,13 @@ export default function Movies() {
         <Btn variant="outlined" sx={{ height: '50' }}>
           Primary
         </Btn> */}
-          <input type="text" name="query" />
+          <input
+            type="text"
+            placeholder="Search movies"
+            name="query"
+            value={querySearch}
+            onChange={e => setQuerySearch(e.target.value.trim())}
+          />
           <button>Search</button>
         </form>
       </div>

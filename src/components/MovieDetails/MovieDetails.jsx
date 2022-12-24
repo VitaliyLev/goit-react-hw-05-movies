@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { Link, Outlet, useParams } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { Suspense } from 'react';
+
 import { getMovieById } from 'utils/movieApi';
 
 import { Box, Button } from '@mui/material';

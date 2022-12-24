@@ -10,6 +10,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
      <App />
     </BrowserRouter>
   </React.StrictMode>
-  // basename="/goit-react-hw-05-movies/"
 );
-// basename="/goit-react-hw-05-movies/"

@@ -1,9 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
+import { lazy } from 'react';
 import Header from './Header/Header';
 import Cast from './Cast/Cast';
 import Reviews from './Reviews/Reviews';
-
-import { lazy } from 'react';
 
 const PageHome = lazy(() => import('./Home/Home'));
 const PageMovies = lazy(() => import('./Movies/Movies'));
@@ -29,3 +28,7 @@ export const App = () => {
     </>
   );
 };
+
+//use search params
+//пропи глянути
+//розділити логіку сторінок, тренди, пошук, детейлс
