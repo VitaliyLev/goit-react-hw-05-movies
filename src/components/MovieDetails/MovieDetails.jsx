@@ -36,11 +36,21 @@ export default function MovieDetails() {
 
       <Container fixed>
         <BoxCard>
-          <img
-            src={`https://image.tmdb.org/t/p/w500${poster_path}`}
-            alt=""
-            width={'200px'}
-          />
+          {poster_path ? (
+            <img
+              src={`https://image.tmdb.org/t/p/w500${poster_path}`}
+              alt={title}
+              loading="lazy"
+              width={'200px'}
+            />
+          ) : (
+            <img
+              src="https://media.tproger.ru/uploads/2018/04/docker-404-pic.jpg"
+              alt={title}
+              loading="lazy"
+              width={'200px'}
+            />
+          )}
           <div>
             <h1>{title}</h1>
             <p>User score: {Math.floor(vote_average * 10)}%</p>

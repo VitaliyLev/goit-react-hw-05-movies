@@ -45,7 +45,7 @@ export default function Movies() {
             placeholder="Search movies"
             name="query"
             value={querySearch}
-            onChange={e => setQuerySearch(e.target.value.trim())}
+            onChange={e => setQuerySearch(e.target.value.trim().toLowerCase())}
           />
           <button>Search</button>
         </form>

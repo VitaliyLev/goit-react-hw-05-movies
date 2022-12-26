@@ -12,6 +12,9 @@ export const BoxCard = styled(Box)`
   @media (max-width: 599px) {
     flex-direction: column;
   }
+  @media (max-width: 899px) {
+    flex-direction: column;
+  }
 
   img {
     display: block;
@@ -33,6 +36,13 @@ export const BoxCard = styled(Box)`
     @media (min-width: 600px) {
       width: 360px;
       margin-right: 25px;
+    }
+    @media (max-width: 899px) {
+      display: block;
+      width: 360px;
+      margin-right: 25px;
+      margin: auto;
+      margin-bottom: 25px;
     }
     @media (min-width: 1180px) {
       width: 450px;
