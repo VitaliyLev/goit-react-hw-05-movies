@@ -33,7 +33,9 @@ export default function Movies() {
     }
 
     setQuerySearch(queryUrl);
-    getQueryMovie(queryUrl).then(data => setmovieSearch(data.results));
+    getQueryMovie(queryUrl.toLowerCase()).then(data =>
+      setmovieSearch(data.results)
+    );
   }, [queryUrl]);
 
   return (
@@ -45,7 +47,7 @@ export default function Movies() {
             placeholder="Search movies"
             name="query"
             value={querySearch}
-            onChange={e => setQuerySearch(e.target.value.trim().toLowerCase())}
+            onChange={e => setQuerySearch(e.target.value.trim())}
           />
           <button>Search</button>
         </form>
